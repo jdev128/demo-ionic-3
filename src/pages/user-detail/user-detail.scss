@@ -1,0 +1,36 @@
+page-user-detail {
+
+  .header-image {
+    position:fixed;
+    height: 30vh;
+  }
+
+  .main-content {
+    position: relative;
+    background-color: white;
+    padding: 0px 15px 15px ;
+    border-radius: 2px;
+    margin: 10px;
+    top: 25vh;
+    padding-top: 50px;
+    text-align: center;
+    box-shadow: 3px 3px 4px #b5b5b5bf, -3px 3px 4px #b5b5b5bf;
+  }
+
+  .circular {
+    position: relative;
+    margin-top: -90px;
+    height: 100px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    border: 3px solid white;
+  }
+
+  .profile-description {
+    margin: 0px 10px 20px;
+    color: grey;
+  }
+
+}

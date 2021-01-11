@@ -1,0 +1,28 @@
+<ion-menu [content]="myNav" persistent="true">
+
+  <ion-header>
+    <ion-toolbar>
+      <img id="logo_osde" src="../assets/imgs/logo_osde.svg">
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list no-lines>
+      <ion-list-header>
+        <div *ngIf="authProvider.isLoggedIn()">
+          <ion-item>
+            <ion-icon name="person" item-start small></ion-icon>
+            <p>{{authProvider.getCurrentUser().email}}</p>
+          </ion-item>
+        </div>
+      </ion-list-header>
+      <button ion-item *ngFor="let page of pages" [ngClass]="page.active ? 'active-page': 'inactive-page'" (click)="handleNav($event, page)" menuClose>
+        <ion-icon item-start name={{page.icon}}></ion-icon>
+        {{page.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav #myNav [root]="rootPage"></ion-nav>

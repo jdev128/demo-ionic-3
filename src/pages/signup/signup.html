@@ -1,0 +1,52 @@
+<!--
+  Generated template for the SignupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Registro</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="form" (ngSubmit)="trySignUp()">
+
+    <ion-item>
+      <ion-label floating color="primary">Email</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <div *ngIf="form.get('email').invalid && (form.get('email').dirty || form.get('email').touched)" class="error-block">
+      <div *ngIf="form.get('email').errors.required">
+        Ingresa un email para continuar
+      </div>
+      <div *ngIf="!form.get('email').errors.required && form.get('email').errors.email">
+        El email no tiene un formato v&aacute;lido
+      </div>
+    </div>
+
+    <ion-item>
+      <ion-label floating color="primary">Contrase&ntilde;a</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <div *ngIf="form.get('password').invalid && (form.get('password').dirty || form.get('password').touched)" class="error-block">
+      <div *ngIf="form.get('password').errors.required">
+        Ingresa una contrase&ntilde;a para continuar
+      </div>
+      <div *ngIf="!form.get('password').errors.required && form.get('password').errors.minlength">
+        La contrase&ntilde;a debe tener m&aacute;s de 6 caracteres
+      </div>
+    </div>
+
+    <button ion-button block class="submit-button">CREAR CUENTA</button>
+
+    <div *ngIf="lastErrorCode" class="error-block">
+      <div [ngSwitch]="lastErrorCode">
+        <p class="main-error" *ngSwitchCase="'INVALID_EMAIL'">El email ya est&aacute; en uso</p>
+        <p class="main-error" *ngSwitchDefault>Error desconocido</p>
+      </div>
+    </div>
+    <p class="footer">Ya tienes cuenta? <a (click)="goLogIn()">Ingresar</a></p>
+  </form>
+</ion-content>

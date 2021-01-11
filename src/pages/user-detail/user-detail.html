@@ -1,0 +1,63 @@
+<!--
+  Generated template for the UserDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Detalle Usuario</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <img class="header-image" src="../../assets/imgs/city-lights-cover.jpg">
+  <div class="main-content">
+    <img class="circular" src="{{user.picture.medium}}">
+    <h2>
+      {{user.name.first}}
+    </h2>
+    <p>Developer &#8226; {{user.location.city}}</p>
+    <p class="profile-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porta felis ut elit tempor, eu rutrum erat pulvinar. Maecenas placerat laoreet fringilla. Morbi tristique eleifend porttitor. Phasellus in auctor sapien.</p>
+    <hr>
+    <ion-list>
+      <ion-item>
+        <ion-icon name="mail" item-start color="primary"></ion-icon>
+        <h3>Email</h3>
+        <p>{{user.email}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="call" item-start color="danger"></ion-icon>
+        <h3>Tel&eacute;fono</h3>
+        <p>{{user.phone}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="logo-whatsapp" item-start color="secondary"></ion-icon>
+        <h3>Whatsapp</h3>
+        <p>{{user.cell}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="map" item-start color="primary"></ion-icon>
+        <h3>Ubicaci&oacute;n</h3>
+        <p>{{user.location.coordinates.latitude}}, {{user.location.coordinates.longitude}}</p>
+      </ion-item>
+    </ion-list>
+    <hr>
+    <h2>Redes Sociales</h2>
+    <br>
+    <button ion-button block>
+      <ion-icon name="logo-linkedin" item-start></ion-icon>
+      &nbsp;LINKEDIN
+    </button>
+    <button ion-button block>
+      <ion-icon name="logo-facebook" item-start></ion-icon>
+      &nbsp;FACEBOOK
+    </button>
+    <button ion-button block color="danger">
+      <ion-icon name="logo-youtube" item-start></ion-icon>
+      &nbsp;YOUTUBE
+    </button>
+  </div>
+
+
+</ion-content>
